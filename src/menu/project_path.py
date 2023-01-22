@@ -5,8 +5,6 @@ def project_path():
   location_menu()
   option = input("Digite sua opção: ")
   if option == "1":
-    # command_mkdir = "mkdir /" + path() +  "lalaland"
-    # os.system(command_mkdir)
     return path()
   elif option == "2":
     manual_path = input("Digite o path ou araste para o terminal a pasta que deseja salvar o projeto: ")
