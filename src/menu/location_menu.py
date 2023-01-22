@@ -1,10 +1,8 @@
-from utils.path_list import path_list
+from utils.path import path
 
 def location_menu():
   print("Onde deseja salvar o projeto?")
-  path = path_list()
-  suggestion = path[1] + "/" + path[2] + "/" + path[3] + "/"
   print("")
-  print("1- " + suggestion)
+  print("1- " + path())
   print("2- Outro lugar")
   print("")
