@@ -1,3 +1,3 @@
 def project_name(): 
-  print("Digite o nome do projeto: ")
+  print("Digite o nome do diretório: ")
   return input()
