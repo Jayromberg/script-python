@@ -1,7 +1,4 @@
-# import os
 from menu.home_menu import home_menu
-from menu.project_path import project_path
-from menu.project_name import project_name
 from commands.font_end import front_end_commands
 from commands.back_end import back_end_commands
 
@@ -13,13 +10,9 @@ if project_category == "0":
   print("Saindo do programa...")
   exit(0)
 elif project_category == "1":
-  chosen_path = project_path()
-  chosen_name = project_name()
-  front_end_commands(chosen_path, chosen_name)
+  front_end_commands()
 elif project_category == "2":
-  chosen_path = project_path()
-  chosen_name = project_name()
-  back_end_commands(chosen_path, chosen_name)
+  back_end_commands()
 else:
   print("Não conheço este comando")
   exit(-1)

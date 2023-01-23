@@ -1,13 +1,17 @@
 import os
+from commands.commands_list import commands
+from menu.project_path import project_path
+from menu.project_name import project_name
 
-def front_end_commands(path, project_name):
-  directory_exist = os.path.exists(path + project_name)
-  command_mkdir = "mkdir " + path +  project_name
-  command_react = "npx create-react-app " + path + project_name + "/web"
+def front_end_commands():
+  chosen_path = project_path()
+  chosen_name = project_name()
 
-  if directory_exist:
-    os.system(command_react)
-  else:
-    os.system(command_mkdir)
-    os.system(command_react)
+  new_path = chosen_path + chosen_name
+  directory_exist = commands(new_path, "directory_exist")
+
+  if not directory_exist:
+    os.system(commands(new_path, "mkdir"))
+  
+  os.system(commands(new_path, "react"))
     

@@ -1,15 +1,18 @@
 import os
+from commands.commands_list import commands
+from menu.project_path import project_path
+from menu.project_name import project_name
 
-def back_end_commands(path, project_name):
-  directory_exist = os.path.exists(path + project_name)
-  command_mkdir = "mkdir " + path +  project_name 
-  command_mkdir_back = "mkdir " + path + project_name + "/back"
-  command_npm_init = "cd ~ && cd " + path + project_name + "/back && npm init -y" 
+def back_end_commands():
+  chosen_path = project_path()
+  chosen_name = project_name()
 
-  if directory_exist:
-    os.system(command_mkdir_back)
-    os.system(command_npm_init)
-  else:
-    os.system(command_mkdir)
-    os.system(command_mkdir_back)
-    os.system(command_npm_init)
+  new_path = chosen_path + chosen_name
+
+  directory_exist = commands(new_path, "directory_exist")
+
+  if not directory_exist:
+    os.system(commands(new_path, "mkdir"))
+  
+  os.system(commands(new_path, "mkdir_back"))
+  os.system(commands(new_path, "npm_init"))
