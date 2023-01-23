@@ -8,6 +8,7 @@ def front_end_commands():
   chosen_name = project_name()
 
   new_path = chosen_path + chosen_name
+  
   directory_exist = commands(new_path, "directory_exist")
 
   if not directory_exist:
