@@ -2,6 +2,7 @@ import os
 from commands.commands_list import commands
 from menu.project_path import project_path
 from menu.project_name import project_name
+from rewrite.script_dev import script_dev
 
 def back_end_commands():
   chosen_path = project_path()
@@ -19,3 +20,4 @@ def back_end_commands():
   os.system(commands(new_path, "npm_typescript"))
   os.system(commands(new_path, "npx_tsc_init"))
   os.system(commands(new_path, "npm_ts-node"))
+  script_dev(new_path)
