@@ -16,3 +16,5 @@ def back_end_commands():
   
   os.system(commands(new_path, "mkdir_back"))
   os.system(commands(new_path, "npm_init"))
+  os.system(commands(new_path, "npm_typescript"))
+  os.system(commands(new_path, "npx_tsc_init"))
