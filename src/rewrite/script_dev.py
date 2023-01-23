@@ -9,9 +9,9 @@ def script_dev(path):
     dados = json.load(arq)
     # atualizar os dados com a nova pergunta
     dados["scripts"] = {
-      "dev": "npm alguma coisa",
+      "dev": "tsnd src/server.ts",
     }
     # escreve o objeto atualizado no arquivo temporário
-    json.dump(dados, out, ensure_ascii=False, indent=4, separators=(',',':'))
+    json.dump(dados, out, ensure_ascii=False, indent=2, separators=(',',':'))
   # se tudo deu certo, renomeia o arquivo temporário
   shutil.move(out.name, path +'/back/package.json')
